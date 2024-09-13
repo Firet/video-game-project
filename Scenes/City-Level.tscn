@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Cars/Caterham/Car.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Models/Tracks/ramp.obj" type="ArrayMesh" id=2]
 [ext_resource path="res://Scenes/Ground.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Textures/bristles-2-flat-rough.jpg" type="Texture" id=4]
 [ext_resource path="res://Scripts/camera.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Mesh-library/city-tileset-with-collision.tres" type="MeshLibrary" id=7]
 
 [sub_resource type="SpatialMaterial" id=2]
 albedo_texture = ExtResource( 4 )
@@ -46,3 +47,13 @@ transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0.42428
 current = true
 script = ExtResource( 5 )
 follow_this_path = NodePath("../Car/Car")
+
+[node name="GridMap" type="GridMap" parent="."]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
+mesh_library = ExtResource( 7 )
+data = {
+"cells": PoolIntArray( 65532, 1, 2, 65534, 1, 1, 65532, 2, 2, 65534, 2, 1, 65534, 4, 0 )
+}
+__meta__ = {
+"_editor_clip_": 0
+}
